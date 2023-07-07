@@ -1,0 +1,47 @@
+# Negative log-likelihood
+neg_log_likelihood <- function(lambda, nx, nrc){
+  len <- length(nx) - 1
+  c1 <- sum((0:len)*nx)
+  c2 <- sum(nx)
+  prc <- 1 - sum(dpois(0:len, lambda))
+  ll <- c1*log(lambda) - c2*lambda + nrc*log(prc)
+  return(-ll)
+}
+
+# Data
+nx <- c(0, 18, 126, 182, 122, 37)
+nrc <- 5
+
+# Initial guess for lambda
+lam0 <- sum((0:len)*nx/sum(nx))
+
+# Maximize likelihood
+lambda_hat <- optim(lam0, neg_log_likelihood, nx=nx, nrc=nrc,
+                    method='Brent', lower=0, upper=20)$par
+# Print result
+lambda_hat
+
+NSIMS <- 1e4
+lambda_hat <- rep(NA, NSIMS)
+for(i in 1:NSIMS){
+  x <- rpois(1000, 2.5)
+  tx <- table(x)
+  nx <- tx[1:5]
+  nrc <- sum(tx[-(1:5)])
+  lambda_hat[i] <- optim(lam0, neg_log_likelihood, nx=nx, nrc=nrc,
+                      method='Brent', lower=0, upper=20)$par
+}
+
+
+lambda_hat <- rep(NA, NSIMS)
+for(i in 1:NSIMS){
+  x <- rbinom(1000, 10, .75)*rbinom(1000, 1, 1/3)
+  tx <- table(x)
+  nx <- tx[1:5]
+  nrc <- sum(tx[-(1:5)])
+  lambda_hat[i] <- optim(lam0, neg_log_likelihood, nx=nx, nrc=nrc,
+                         method='Brent', lower=0, upper=20)$par
+}
+
+
+

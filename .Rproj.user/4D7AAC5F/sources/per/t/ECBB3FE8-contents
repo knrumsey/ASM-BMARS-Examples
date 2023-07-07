@@ -1,0 +1,15 @@
+n <- 1000
+p <- 5
+X <- lhs::maximinLHS(n, p)
+y <- apply(X, 1, duqling::friedman)
+
+mod <- bass(X, y, birth.type="coinflip")
+sob <- sobol(mod)
+shap <- shapley(sob, proportion=TRUE)
+
+sobS <- apply(sob$S, 2, mean)[1:5]
+sobT <- apply(sob$T, 2, mean)
+Shap <- apply(shap, 2, mean)
+
+Tab <- round(cbind(sobS, sobT, Shap), 3)
+stargazer::stargazer(Tab, summary=FALSE, type="text")
