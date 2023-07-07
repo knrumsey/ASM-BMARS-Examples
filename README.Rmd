@@ -15,23 +15,24 @@ knitr::opts_chunk$set(
 ```
 
 
-This repository contains several R scripts to reproduce the examples found in the (submitted for review) manuscript *Active Subspaces for High Dimensional Computer Models*.
+**Note:** The rendered quarto document `Examples_Walkthrough` is a good place to start. It provides easy-to-follow implementation details for Sections 4.1-4.2 in the manuscript (linked here when available). Additional scripts are included to reproduce the results included in Sections 4.1-4.2 as well as some of the results in the Supplemental materials.
 
-To run these scripts, you will need to install the `concordance` and `GBASS` packages (other packages from CRAN may be neeed, see `R/setup.R` for details) from public github repos using the commands.
+This repository contains several R scripts to reproduce the examples found in the (submitted for review) manuscript *Active Subspaces for High Dimensional Computer Models*. To run these scripts, you will need to install the `concordance` and `GBASS` packages (other packages from CRAN may be needed, see `R/setup.R` for details) from public github repos using the commands.
 
 ```{r, eval = F}
 # install.packages("devtools")
 devtools::install_github("knrumsey/concordance")
-devtools::install_github("knrumsey/GBASS")
+devtools::install_github("knrumsey/GBASS") # only needed for supplemental materials
 ```
+ 
+ The scripts included in this repository include
 
-A link to the manuscript will be included when available. A Quarto document (and the rendered pdf) titled `Examples_Walkthrough` includes a demonstration of the examples from sections 4.1 and 4.2 in the manuscript. Additional scripts are included to reproduce the results included in Sections 4.1-4.2 as well as some of the results in the Supplemental materials. The scripts included in this repository include
-
-   - `A_simple_polynomial.R` (Section 4.1)
-   - `B_linear_constraint.R` (Section 4.1.1)
-   - `C_low_dim_structure.R` (Section 4.2)
-   - `D_polynomial_outliers.R` (Supplemental materials)
-   - `E_polynomial_quantile.R` (Supplemental materials)
+   - `Examples_Walkthrough.qmd`
+   - `R/A_simple_polynomial.R` (Section 4.1)
+   - `R/B_linear_constraint.R` (Section 4.1.1)
+   - `R/C_low_dim_structure.R` (Section 4.2)
+   - `R/D_polynomial_outliers.R` (Supplemental materials)
+   - `R/E_polynomial_quantile.R` (Supplemental materials)
    
 
 
