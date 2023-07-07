@@ -1,7 +1,0 @@
-"0","C_ell <- list()"
-"0","wt <- rep(NA, L)"
-"0","for(i in 1:L){"
-"0","  C_ell[[i]] <- C_bass(mod, prior=rho[[i]])"
-"0","  wt[i] <- (1 - i/(L+1))*(1/(L+1))"
-"0","}"
-"0","wt <- wt/sum(wt)"

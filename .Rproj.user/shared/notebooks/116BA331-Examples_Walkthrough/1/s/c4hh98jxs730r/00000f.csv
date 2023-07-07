@@ -1,4 +1,0 @@
-"0","n <- 500"
-"0","p <- 5"
-"0","X <- matrix(runif(n*p), ncol=p)"
-"0","y <- apply(X, 1, f)"
