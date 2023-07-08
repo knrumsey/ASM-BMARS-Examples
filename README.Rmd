@@ -33,6 +33,7 @@ devtools::install_github("knrumsey/GBASS") # only needed for supplemental materi
    - `R/C_low_dim_structure.R` (Section 4.2)
    - `R/D_polynomial_outliers.R` (Supplemental materials)
    - `R/E_polynomial_quantile.R` (Supplemental materials)
+   - `R/F_activity_posterior.R` (Supplemental materials)
    
 
 
