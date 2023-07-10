@@ -10,8 +10,9 @@ n <- 100
 X <- matrix(runif(n*p), ncol=p)
 y <- apply(X, 1, f) + rnorm(n, 0, 0.1)
 
-# Use BASS package
-mod <- bass(X, y, birth.type="coinflip", nmcmc=20000, nburn=19000)
+#' Use BASS package
+#mod <- bass(X, y, birth.type="coinflip", nmcmc=20000, nburn=19000) # Use this version for best results
+mod <- bass(X, y)
 C <- C_bass(mod, mcmc.use=1:1000)
 
 # Use GP package

@@ -1,5 +1,5 @@
-R scripts for ‘Discovering Active Subpaces for High Dimensional Computer
-Models’
+Discovering Active Subpaces for High Dimensional Computer Models
+(Examples and R Code)
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -32,5 +32,20 @@ The scripts included in this repository include
 - `R/C_low_dim_structure.R` (Section 4.2)
 - `R/D_polynomial_outliers.R` (Supplemental materials)
 - `R/E_polynomial_quantile.R` (Supplemental materials)
+- `R/F_activity_posterior.R` (Supplemental materials)
+- `R/G_Interaction_Order.R` (Supplemental materials)
 
-# References
+## Copyright Notice
+
+© *2023. Triad National Security, LLC. All rights reserved.*
+
+*This program was produced under U.S. Government contract
+89233218CNA000001 for Los Alamos National Laboratory (LANL), which is
+operated by Triad National Security, LLC for the U.S. Department of
+Energy/National Nuclear Security Administration. All rights in the
+program are reserved by Triad National Security, LLC, and the U.S.
+Department of Energy/National Nuclear Security Administration. The
+Government is granted for itself and others acting on its behalf a
+nonexclusive, paid-up, irrevocable worldwide license in this material to
+reproduce, prepare derivative works, distribute copies to the public,
+perform publicly and display publicly, and to permit others to do so.*
