@@ -16,7 +16,9 @@ y <- apply(X, 1, f) + rnorm(n, 0, 0.1)
 #' Use BASS package
 #mod <- bass(X, y, birth.type="coinflip", nmcmc=20000, nburn=19000) # Use this version for best results
 mod <- bass(X, y)
+#tic()
 C <- C_bass(mod, mcmc.use=1:1000)
+#toc()
 
 # Get activity scores (BASS posterior)
 ACT <- matrix(NA, nrow=1000, ncol=p)
@@ -28,10 +30,10 @@ for(i in 1:1000){
 # Use GP package
 mod2 <- mleHetGP(X, y)
 C2 <- C_GP(mod2)[[1]]
-tictoc::tic()
+#tictoc::tic()
 C2_ci <- C_GP_ci(mod2, B=B)
-t0 <- tictoc::toc()
-cat(t0$toc - t0$tic)
+#t0 <- tictoc::toc()
+#cat(t0$toc - t0$tic)
 
 # Get activity scores (GP)
 # Note: No way to get posterior samples for GP
